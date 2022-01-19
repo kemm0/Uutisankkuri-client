@@ -2,29 +2,29 @@ import authRequests from '../utils/authRequests'
 
 const baseUrl = '/api/feedboards'
 
-const get = async () => {
-    const response = await authRequests.get(baseUrl);
-    return response.data;
+const get = async (token) => {
+    const response = await authRequests.get(baseUrl, token);
+    return response;
 };
 
-const getById = async (id) => {
-    const response = await authRequests.get(`${baseUrl}/${id}`);
-    return response.data;
+const getById = async (id, token) => {
+    const response = await authRequests.get(`${baseUrl}/${id}`, token);
+    return response;
 }
 
-const post = async (boardData) => {
-    const response = await authRequests.post(baseUrl, boardData);
-    return response.data;
+const post = async (boardData, token) => {
+    const response = await authRequests.post(baseUrl, token, boardData);
+    return response;
 }
 
-const update = async(id, boardData) => {
-    const response = await authRequests.put(`${baseUrl}/${id}`, boardData);
-    return response.data;
+const update = async(id, token, boardData) => {
+    const response = await authRequests.put(`${baseUrl}/${id}`, token, boardData);
+    return response;
 }
 
-const remove = async(id) => {
-    const response = await authRequests.remove(`${baseUrl}/${id}`);
-    return response.data;
+const remove = async(id, token) => {
+    const response = await authRequests.remove(`${baseUrl}/${id}`, token);
+    return response;
 }
 
 export default {

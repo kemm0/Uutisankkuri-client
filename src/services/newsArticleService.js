@@ -2,16 +2,16 @@ import authRequests from "../utils/authRequests";
 
 const baseUrl = '/api/newsfeeds';
 
-const get = async (searchParams) => {
-    const response = await authRequests.get(baseUrl, { 
+const get = async (token, searchParams) => {
+    const response = await authRequests.get(baseUrl, token, { 
         params: searchParams
     });
-    return response.data;
+    return response;
 };
 
-const getById = async (id) => {
-    const response = await authRequests.get(`${baseUrl}/${id}`);
-    return response.data;
+const getById = async (token, id) => {
+    const response = await authRequests.get(`${baseUrl}/${id}`, token);
+    return response;
 }
 
 export default { 
