@@ -1,6 +1,6 @@
 import authRequests from "../utils/authRequests";
 
-const baseUrl = '/api/newsfeeds';
+const baseUrl = '/api/newsarticles';
 
 const get = async (token, searchParams) => {
     const response = await authRequests.get(baseUrl, token, { 

@@ -1,5 +1,5 @@
 import LoginPage from "./pages/LoginPage";
-import DashBoard from "./components/Dashboard";
+import DashBoard from "./pages/Dashboard";
 import { useState, useEffect } from "react";
 import { setToken, setUser } from "./reducers/user";
 import { useSelector, useDispatch } from "react-redux";
